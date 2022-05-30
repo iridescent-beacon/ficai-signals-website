@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=en id=h class='{{theme}}'>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ domain }} {% block title %}{% endblock %}</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link href="/main.css?{% include "fragments/cacheBuster.html" %}" rel="stylesheet" type="text/css">
+		{% block head %}<script src="/main.js?{% include "fragments/cacheBuster.html" %}"></script>{% endblock %}
+	</head>
+	<body class="mcol ipage">
+		<h2 class=header><a href=/>{{domain}}</a> {% block header %}{% endblock %}</h2>
+		{% block precontent %}{% endblock %}
+		{% block content %}{% endblock %}
+
+		<hr>
+		<div>
+			<select id=theme>
+				<option value=''>Theme</option>
+				<option value=night {% if theme == "night" %}selected{% endif %}>Night</option>
+				<option value=light {% if theme == "light" %}selected{% endif %}>Light</option>
+			</select>
+		</div>
+	</body>
+</html>

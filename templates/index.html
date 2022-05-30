@@ -1,0 +1,15 @@
+{% extends "base_flashable.html" %}
+{% block content %}
+<div class=cc>
+	<h3 class=lcol><a href=/fics/>Fics</a></h3>
+	<h3 class=rcol><a href=/tags/>Tags</a></h3>
+</div>
+<hr />
+
+{% match user %}
+{% when Some with (user) %}
+{% include "fragments/you.html" %}
+{% when None %}
+{% include "fragments/login.html" %}
+{% endmatch %}
+{% endblock %}

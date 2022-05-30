@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block precontent %}
+{% match flash_message %}
+{% when Some with (flash_message) %}
+<h3>{{flash_message}}</h3>
+<hr />
+{% when None %}
+{% endmatch %}
+{% endblock %}

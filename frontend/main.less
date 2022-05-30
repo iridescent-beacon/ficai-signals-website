@@ -1,0 +1,78 @@
+html { font-size: 1.2em; }
+
+.mcol {
+	width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.lcol { float: left  }
+.rcol { float: right }
+.cc::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+button, input, select { font-size: 1.0rem; border: 1px solid #888; }
+
+h2 {
+	width: 100%;
+	text-align: center;
+}
+form label {
+	text-align: right;
+	display: inline-block;
+	width: 120px;
+}
+
+hr { border: none; }
+
+/* colorschemes */
+.light, html.light {
+	--foreground: black;
+	--background: white;
+	--header: black;
+	--link: #0000ee;
+	--link-visited: #561b8b;
+	--button: black;
+	--button-background: #f8f8f8;
+	--button-disabled: #ababab;
+	--button-background-disabled: #eeeeee;
+}
+.night, html.night {
+	--foreground: #ddd;
+	--background: #222;
+	--header: #eee;
+	--link: #6a82cf;
+	--link-visited: #8963b5;
+	--button: #eee;
+	--button-background: #111;
+	--button-disabled: #ddd;
+	--button-background-disabled: #888;
+}
+
+:root, {
+	.light();
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		.night();
+	}
+}
+
+html { color: var(--foreground); background: var(--background); }
+.header a { color: var(--header); }
+.header a:visited { color: var(--header); }
+
+a { color: var(--link); }
+a:visited { color: var(--link-visited); }
+
+button, input, select {
+	color: var(--button);
+	background: var(--button-background);
+}
+button:disabled {
+	color: var(--button-disabled);
+	background: var(--button-background-disabled);
+}
+

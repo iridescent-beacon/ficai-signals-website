@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}| Fics{% endblock%}
+{% block header %}| <a href=/fics/>Fics</a>{% endblock %}
+{% block content %}
+{% match user %}
+{% when Some with (user) %}
+<h3>You are: {{user.uid}}</h3>
+{% when None %}
+{% endmatch %}
+{% include "fragments/fics.html" %}
+{% endblock %}

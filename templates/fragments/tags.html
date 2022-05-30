@@ -1,0 +1,9 @@
+{% if tags.len() == 0 %}
+<p>no tags</p>
+{% else %}
+<ul>
+	{% for tag in tags -%}
+	<li><a href='/tags/{{tag.id}}/{{tag.name|urlencode_strict}}'>{{tag.name}}</a></li>
+	{% endfor %}
+</ul>
+{% endif %}

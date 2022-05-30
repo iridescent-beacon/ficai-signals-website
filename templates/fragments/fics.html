@@ -1,0 +1,9 @@
+{% if fics.len() == 0 %}
+<p>no fics</p>
+{% else %}
+<ul>
+	{% for fic in fics -%}
+	<li><a href='/fics/{{fic.id}}/{{fic.title|urlencode_strict}}'>{{fic.title}}</a></li>
+	{% endfor %}
+</ul>
+{% endif %}
